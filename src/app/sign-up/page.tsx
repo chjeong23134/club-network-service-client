@@ -1,13 +1,13 @@
 import styles from './page.module.scss';
-import logo from '@/images/logo.png';
+import logo from '../../images/logo.png';
 
 import Image from 'next/image';
 
 export const metadata = {
-	title: {
-		default: "로그인"
-	},
-	description: "모삼: 모임모두모아 로그인"
+    title: {
+        default: "회원가입"
+    },
+    description: "모삼: 모임모두모아 회원가입"
 }
 
 export default function Signin() {
@@ -27,22 +27,32 @@ export default function Signin() {
 				</div>
 
 				<div className={styles.labelWrapper}>
+					<label>닉네임</label>
+					<input placeholder="한글, 알파벳, 숫자를 조합하여 2~20자 사이로 입력해주세요." />
+				</div>
+
+				<div className={styles.labelWrapper}>
 					<label>이메일</label>
-					<input />
+					<input placeholder="moim@modumoa.com" />
 				</div>
 
 				<div className={styles.labelWrapper}>
 					<label>비밀번호</label>
-					<input />
+					<input placeholder="알파벳, 숫자를 조합하여 6자리 이상을 입력해주세요." />
+				</div>
+
+				<div className={styles.labelWrapper}>
+					<label>비밀번호 확인</label>
+					<input placeholder="알파벳, 숫자를 조합하여 6자리 이상을 입력해주세요." />
 				</div>
 
 				<div className={styles.buttonWrapper}>
-					<button className={styles.signButton}>로그인</button>
+					<button className={styles.signButton}>회원가입</button>
 				</div>
 
 				<div className={styles.buttonWrapper}>
-					<p>아직 회원이 아니신가요?</p>
-					<a href="signup">회원가입</a>
+					<p>이미 회원이 이신가요?</p>
+					<a href="signin">로그인</a>
 				</div>
 			</div>
 		</div>
