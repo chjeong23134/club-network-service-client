@@ -17,7 +17,7 @@ export const metadata = {
 //
 //
 
-export default function SignIn() {
+export default function SignUp() {
 	return (
 		<div className={styles.page}>
 			<div className={styles.board}>
