@@ -1,6 +1,9 @@
 import "./globals.scss";
+//
 
 import Nav from "@/components/nav";
+//
+//
 
 export const metadata = {
 	title: {
@@ -12,6 +15,9 @@ export const metadata = {
 		icon: '/icon.ico',
 	}
 }
+//
+//
+//
 
 export default function RootLayout({
 	children,

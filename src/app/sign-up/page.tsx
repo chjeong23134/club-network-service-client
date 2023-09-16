@@ -1,7 +1,11 @@
 import styles from './page.module.scss';
-import logo from '../../images/logo.png';
+//
 
 import Image from 'next/image';
+
+import logo from '@/images/logo.png';
+//
+//
 
 export const metadata = {
     title: {
@@ -9,8 +13,11 @@ export const metadata = {
     },
     description: "모삼: 모임모두모아 회원가입"
 }
+//
+//
+//
 
-export default function Signin() {
+export default function SignIn() {
 	return (
 		<div className={styles.page}>
 			<div className={styles.board}>

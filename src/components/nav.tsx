@@ -1,6 +1,11 @@
 import styles from "./nav.module.scss";
-import logo from "../images/logo.png";
+//
+
 import Image from "next/image";
+
+import logo from "@/images/logo.png";
+//
+//
 
 export default function Nav() {
 	return (
