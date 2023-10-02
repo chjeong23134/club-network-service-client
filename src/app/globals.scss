@@ -1,3 +1,13 @@
+@font-face {
+	font-family: "Jua";
+	src: url("../fonts/Jua.ttf");
+}
+
+@font-face {
+	font-family: "HannaAir";
+	src: url("../fonts/HannaAir.ttf");
+}
+
 html,
 body {
 	width: 100%;
@@ -18,4 +28,6 @@ body {
 
 	display: flex;
 	flex-direction: column;
+
+	font-family: "jua";
 }
