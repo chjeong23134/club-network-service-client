@@ -4,7 +4,7 @@ export const metadata = {
 	title: {
 		default: "룸"
 	},
-	description: "모삼: 모임모두모아 모임찾기"
+	description: "모삼: 모임모두모아"
 }
 
 export default function B() {

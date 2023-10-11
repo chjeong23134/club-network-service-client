@@ -5,7 +5,7 @@ export const metadata = {
 	title: {
 		default: "모임만들기"
 	},
-	description: "모삼: 모임모두모아 모임찾기"
+	description: "모삼: 모임모두모아"
 }
 //
 //
