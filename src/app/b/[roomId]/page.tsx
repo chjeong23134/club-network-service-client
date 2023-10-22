@@ -4,10 +4,15 @@ export const metadata = {
 	title: {
 		default: "룸"
 	},
-	description: "모삼: 모임모두모아 모임찾기"
+	description: "모삼: 모임모두모아"
 }
 
-export default function TopicList() {
+interface Param {
+	roomId: string;
+}
+
+export default function TopicList({params}: {params: Param}) {
+	const roomId = params.roomId;
 	const items = [{content: "어쩌구저쩌구1"},{content: "어쩌구저쩌구2"},{content: "어쩌구저쩌구3"},{content: "어쩌구저쩌구4"},{content: "어쩌구저쩌구5"}]
 
 	return (
