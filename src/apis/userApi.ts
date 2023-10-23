@@ -6,7 +6,7 @@ const axios: AxiosInstance = Axios.create({
 
 //const BASE_URL = "https://3.39.176.88:8080/auth";
 
-interface UserType {
+export interface UserType {
 	readonly id: number;
 	readonly email: string;
 	readonly password: string;

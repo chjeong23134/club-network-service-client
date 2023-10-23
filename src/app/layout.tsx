@@ -2,6 +2,7 @@ import "./globals.scss";
 //
 
 import Nav from "@/components/nav";
+import RecoilProvider from "./recoilProvider";
 //
 //
 
@@ -27,11 +28,13 @@ export default function RootLayout({
 	return (
 		<html lang="kr">
 			<body>
-				<div className="app">
-					<Nav />
+				<RecoilProvider>
+					<div className="app">
+						<Nav />
 
-					{children}
-				</div>
+						{children}
+					</div>
+				</RecoilProvider>
 			</body>
 		</html>
 	)

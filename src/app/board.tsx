@@ -4,22 +4,38 @@ import styles from './board.module.scss';
 //
 
 import Image from 'next/image';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useSetRecoilState } from 'recoil';
 
 import logo from '@/images/logo.png';
 import { signin } from '@/apis/userApi';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { jwtState, userState } from '@/consts/atom';
 //
 //
 
 export default function Board() {
 	const router = useRouter();
+
+	const setUser = useSetRecoilState(userState);
+    const setJwt = useSetRecoilState(jwtState);
+
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 	//
 
 	function signinHandler() {
-		signin(email, password).then((res) => { console.log(res); router. push("/b"); });
+		signin(email, password).then((res) => {
+			localStorage.setItem("user", JSON.stringify(res.user));
+			localStorage.setItem("jwt", res.accessJwt);
+
+			setUser(res.user);
+			setJwt(res.accessJwt);
+			
+			router.push("/b");
+		});
+
+
 	}
 	//
 	//
@@ -41,7 +57,7 @@ export default function Board() {
 
 				<div className={styles.labelWrapper}>
 					<label>이메일</label>
-					<input onChange={(e) => setEmail(e.target.value)}  placeholder="moim@modumoa.com" />
+					<input onChange={(e) => setEmail(e.target.value)} placeholder="moim@modumoa.com" />
 				</div>
 
 				<div className={styles.labelWrapper}>
