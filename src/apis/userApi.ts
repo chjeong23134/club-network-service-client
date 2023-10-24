@@ -1,7 +1,7 @@
 import Axios, {AxiosInstance} from "axios";
 
 const axios: AxiosInstance = Axios.create({
-    baseURL: "http://localhost:8080/auth"
+    baseURL: "/auth"
 });
 
 //const BASE_URL = "https://3.39.176.88:8080/auth";

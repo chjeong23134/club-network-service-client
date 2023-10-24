@@ -1,17 +1,37 @@
+"use client"
+
 import styles from "./layout.module.scss";
+//
+
+import { useRecoilValue } from "recoil";
+import { useEffect, useState } from "react";
+
+import { RoomType, getRoomList } from "@/apis/roomApi";
+import { jwtState, userState } from "@/consts/atom";
+//
+//
 
 export default function BLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	const items = [{id: 1, name: "room1"},{id: 2, name: "room2 room2 room2"},{id: 3, name: "room3"},{id: 4, name: "room4"},{id: 5, name: "room5"},{id: 6, name: "room6"}]
-	
+	const user = useRecoilValue(userState);
+	const jwt = useRecoilValue(jwtState);
+
+	const [roomList, setRoomList] = useState<RoomType[]>([]);
+	//
+	useEffect(() => {
+		getRoomList(jwt, user.id).then((res) => {
+			setRoomList(res);
+		})
+	}, [])
+
 	return (
 		<div className={styles.BLayout}>
 			<div className={styles.roomList}>
 				<button>+</button>
-				{items.map(room => (
+				{roomList.map(room => (
 					<div className={styles.item} key={room.id}>
 						{room.name}
 					</div>
@@ -21,6 +41,3 @@ export default function BLayout({
 		</div>
 	)
 }
-
-// 나의 모임(+ 모임만들기) | 모임 찾기
-// 
