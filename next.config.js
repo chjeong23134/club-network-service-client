@@ -5,8 +5,12 @@ const nextConfig = {
 	async rewrites() {
 		return [
 			{
-				source: "/:path*",
-				destination: "http://localhost:8080/:path*",
+				source: "/auth/:path*",
+				destination: "http://localhost:8080/auth/:path*",
+			},
+			{
+				source: "/rooms/:path*",
+				destination: "http://localhost:8080/rooms/:path*",
 			},
 		];
 	},

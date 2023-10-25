@@ -1,4 +1,5 @@
-import styles from "./page.module.scss";
+import Board from "./board";
+//
 //
 
 export const metadata = {
@@ -13,15 +14,6 @@ export const metadata = {
 
 export default function CreateRoom() {
 	return (
-		<div className={styles.createRoom}>
-			<div className={styles.board}>
-				<div className={styles.labelWrapper}>
-					<label>룸 이름</label>
-					<input />
-				</div>
-				
-				<button>생성</button>
-			</div>
-		</div>
+		<Board />
 	);
 }

@@ -1,7 +1,7 @@
-import Axios, {AxiosInstance} from "axios";
+import Axios, { AxiosInstance } from "axios";
 
 const axios: AxiosInstance = Axios.create({
-    baseURL: "/rooms"
+	baseURL: "/rooms"
 });
 
 export interface RoomType {
@@ -18,12 +18,27 @@ export async function getRoomList(
 ): Promise<RoomType[]> {
 	return await axios
 		.get("", {
-            params: {
-                userId: userId,
-            },
+			params: {
+				userId: userId,
+			},
 			headers: {
-                Authorization: `Bearer ${jwt}`,
-				'Access-Control-Allow-Origin': '*'
-            },
+				Authorization: `Bearer ${jwt}`,
+			},
+		}).then((res) => res.data);
+}
+
+export async function createRoom(
+	jwt: string,
+	name: string,
+	userId: number
+): Promise<RoomType> {
+	return await axios
+		.post("", {
+			name: name,
+			createBy: userId,
+		}, {
+			headers: {
+				Authorization: `Bearer ${jwt}`,
+			},
 		}).then((res) => res.data);
 }
