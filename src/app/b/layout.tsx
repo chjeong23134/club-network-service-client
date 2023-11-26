@@ -31,7 +31,10 @@ export default function BLayout({
 	}, [router])
 
 	function moveCreateRoomHandler() {
-		router. push("/b/create-room");
+		router.push("/b/create-room");
+	}
+	function moveRoomHandler(id: number) {
+		router.push("/b/" + id);
 	}
 	//
 	//
@@ -41,7 +44,7 @@ export default function BLayout({
 			<div className={styles.roomList}>
 				<button onClick={moveCreateRoomHandler}>+</button>
 				{roomList.map(room => (
-					<div className={styles.item} key={room.id}>
+					<div className={styles.item} key={room.id} onClick={() => moveRoomHandler(room.id)}>
 						{room.name}
 					</div>
 				))}

@@ -17,7 +17,6 @@ export default function TopicList({params}: {params: ParamType}) {
 
 	return (
 		<div className={styles.topicList}>
-			{roomId}
 			{
 				items.map(topic => (
 					<div className={styles.item}>
